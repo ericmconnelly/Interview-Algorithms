@@ -34,4 +34,3 @@ var tree = new BST();
 tree.add(2);
 tree.add(3);
 tree.add(1);
-console.log(tree);

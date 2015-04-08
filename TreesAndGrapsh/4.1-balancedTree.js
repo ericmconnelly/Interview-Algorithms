@@ -1,4 +1,4 @@
-// var BST = require("binarySearchTree.js");
+var BST = require("../binarySearchTree.js");
 // Implement a function to check if a tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from the root by more than one.
 /*
         
@@ -30,6 +30,19 @@ B(h=0)     C (h=2)        <-- Unbalanced: 2-0 =2 > 1
   // if child is not null
     // incremenet depth/height by 1;
 
+/*
+        40
+      /    \
+    25      78
+  /    \
+10      31        // difference is more than 1 level
+      /    \
+     30     33
+
+Output = false
+
+*/
+
 
 var getHeight = function(node, depth) {
   if (node === null) {
@@ -37,7 +50,7 @@ var getHeight = function(node, depth) {
   }
 
   var leftHeight = getHeight(node.left, depth+1);
-  
+
   if (leftHeight === -1) {
     return -1;
   } 
@@ -78,46 +91,24 @@ var isBalanced = function(node) {
 // }
 
 
-
-var getBinaryNode = function(val) {
-  return { value : val, left: null, right: null };
-};
-
-var BST = function() {
-  this.head = null;
-};
-
-BST.prototype.add = function(val) {
-  if(this.head === null) {
-    this.head = getBinaryNode(val);
-  }
-  else {
-    this.insert(this.head, val);
-  }
-};
-
-BST.prototype.insert = function(node, val) {
-  if (node.value > val ) {
-    if (node.left === null) { 
-      node.left = getBinaryNode(val); 
-    } else { 
-      this.insert(node.left, val); 
-    }
-  } else {
-    if (node.right === null) { node.right = getBinaryNode(val); }
-    else { this.insert(node.right, val); }
-  }
-};
-
 var tree = new BST();
-tree.add(2);
-tree.add(3);
-tree.add(1);
-tree.add(5);
-// tree.add(7);
-// tree.add(10);
-tree.add(0);
-tree.add(-1); 
+tree.add(40);
+tree.add(25);
+tree.add(10);
+tree.add(31);
+tree.add(30);
+tree.add(78);
+tree.add(33);
+// tree.add(100); //will return true if added
 
-console.log(tree);
-console.log(isBalanced(tree.head));
+// console.log(tree);
+console.log(isBalanced(tree.head, 0));
+
+var maxDepth = function(node) {
+  if (node === null) {
+    return 0;
+  }
+  return 1 + maxDepth(node.left);
+}
+
+console.log(maxDepth(tree.head));
