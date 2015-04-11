@@ -12,11 +12,11 @@ var BST = require("../binarySearchTree.js");
 
 var depthFirstSearch = function(node, target) {
   var result = [];
-  var found = false;
+  var found = null;
 
   var subRoutine = function(node) {
 
-    if(node && !found) {
+    while(node && !found) {
       if(node.value === target){ 
         result.push(node);
         console.log(result);

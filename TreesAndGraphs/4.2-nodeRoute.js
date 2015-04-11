@@ -38,3 +38,12 @@ tree.add(78);
 tree.add(33);
 
 console.log(commonAncestor(tree.head, 30, 33));
+
+var Node = function(val) {
+  this.value = val;
+  this.left = null;
+  this.right = null;
+};
+
+var node = new Node(1);
+console.log(node);

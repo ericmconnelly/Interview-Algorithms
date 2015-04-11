@@ -18,12 +18,16 @@ BST.prototype.add = function(val) {
 BST.prototype.insert = function(node, val) {
   if (node.value > val ) {
     if (node.left === null) { 
-      node.left = getBinaryNode(val); 
+      node.left = getBinaryNode(val);
+      node.left.parent = node.value; 
     } else { 
       this.insert(node.left, val); 
     }
   } else {
-    if (node.right === null) { node.right = getBinaryNode(val); }
+    if (node.right === null) { 
+      node.right = getBinaryNode(val); 
+      node.right.parent = node.value;
+    }
     else { this.insert(node.right, val); }
   }
 };
@@ -34,3 +38,5 @@ var tree = new BST();
 tree.add(2);
 tree.add(3);
 tree.add(1);
+
+// console.log(tree);

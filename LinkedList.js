@@ -1,26 +1,3 @@
-var removeDupes = function(list) {
-  if (list.head === null) {
-    return;
-  }  
-  var hash = {};
-  var current = list.head;
-  var prev = list.head;
-
-  while( current !== null ){ 
-    if (!hash[current.value]){
-      hash[current.value] =  true;
-      prev = current;
-    } else {
-      prev.next = current.next;
-      list.size--;
-    }
-
-    current = current.next;
-    // console.log(hash);
-  }
-  return list;
-};
-
 var LinkedList = function(){
   //fill me in!
   /* START SOLUTION */

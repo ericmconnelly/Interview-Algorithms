@@ -12,7 +12,11 @@ Output = 10, 25, 32, 40, 78
 */
 
 var inOrderTraverse = function(node) {
+  if(!node){ 
+    return null;
+  }
   if (node) {
+    console.log('recursed', node.value)
     inOrderTraverse(node.left);
     console.log(node.value);
     inOrderTraverse(node.right);
