@@ -24,5 +24,5 @@ var isPalindrome = function(str) {
 
 console.log(isPalindrome('taco cat'));
 var name = 'peter Rocks!';
-name.replace(/[^a-zA-Z0-9 ]/g, "");
+name = name.replace(/[^a-zA-Z0-9 ]/g, "");
 console.log(name);

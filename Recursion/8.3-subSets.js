@@ -22,7 +22,7 @@ function powerSet(input) {
  input = input.split('');
 
  var recurse = function(subStr) {
-  console.log('subStr: ', subStr);
+  // console.log('subStr: ', subStr);
   var joined = subStr.join('');
   if(hash[joined]) {
     return;
@@ -53,7 +53,7 @@ var iterativePS = function(arr) {
   for (var i = 0; i < arr.length; i++){
     for (var j = 0, len = result.length; j < len; j++) {
       // console.log(result);
-      console.log('log: ', result[j].concat(arr[i]));
+      // console.log('log: ', result[j].concat(arr[i]));
       result.push(result[j].concat(arr[i]));
     }
   } 

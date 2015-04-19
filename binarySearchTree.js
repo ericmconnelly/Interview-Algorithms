@@ -32,6 +32,20 @@ BST.prototype.insert = function(node, val) {
   }
 };
 
+BST.prototype.contains = function(target) {
+  var currentNode = this.head;
+  while(currentNode !== null) {
+    if(currentNode.value === target) {
+      return true;
+    } else if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else {
+      currentNode = currentNode.right;
+    }
+  }
+  return false;
+}
+
 module.exports = BST;
 
 var tree = new BST();

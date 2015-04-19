@@ -12,12 +12,14 @@ Output = 10,30,33,31, 25, 78, 40
 
 */
 
+var results = [];
 var postOrderTraverse = function(node) {
   if (node) {
     // console.log(node.value);
     postOrderTraverse(node.left);
     postOrderTraverse(node.right)
     console.log('print: ', node.value);
+    results.push(node.value);
   } 
 };
 
@@ -30,5 +32,17 @@ tree.add(30);
 tree.add(78);
 tree.add(33);
 // console.log(tree);
-
 postOrderTraverse(tree.head);
+console.log(results);
+
+// without recursion
+
+// var postTraverse = function(node) {
+//   var queue = [];
+//   queue.push(node);
+
+//   while(!queue.length){ 
+//     var currentNode = queue.shift();
+//     if (currentNode.left !== null && currentNode.)
+//   }
+// }

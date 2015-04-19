@@ -42,7 +42,7 @@ var permutations2 = function (arr) {
     return finalArr;
 };
 
-permutations2('cat');
+// permutations2('cat');
 
 function combinations(str) {
   var result = [];
@@ -59,3 +59,4 @@ function combinations(str) {
     }
     return fn("", str);
 }
+
