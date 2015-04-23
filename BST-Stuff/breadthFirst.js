@@ -70,3 +70,30 @@ tree.add(78);
 
 printLevel(tree.head);
 // alt(tree.head);
+
+
+var rightSideView = function(root) {
+    if(!root) {
+        return [];
+    }
+    var queue = [root];
+    var next = [];
+    var result = [];
+    
+    while(queue.length) {
+        var current = queue.shift();
+        if (current) {
+            next.push(current.left);
+            next.push(current.right);
+        }
+        if (queue.length === 0) {
+            queue = next;
+            next = [];
+            result.push(queue[queue.length - 1]);
+        }
+    }
+    
+    return result;
+};
+
+console.log(rightSideView(tree));

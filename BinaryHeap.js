@@ -18,7 +18,7 @@ var BinaryHeap = (function() {
 
     BinaryHeap.prototype.insert = function(item) {
         this.items[++this.count] = item;
-        console.log('count', this.count);
+        // console.log('count', this.count);
         /* ensure binary heap invariant */
         var child = this.count;
         var parent = child >> 1;
@@ -35,6 +35,7 @@ var BinaryHeap = (function() {
         if (this.count === this.items.length - 1) {
             this.resize(this.count * 2 + 1);
         }
+        console.log(this.toArray());
     };
 
     BinaryHeap.prototype.delete = function() {
@@ -98,6 +99,6 @@ heap.insert(12);
 // heap.delete();
 // heap.delete();
 
-console.log(heap.toArray());
+// console.log(heap.toArray());
 
 
