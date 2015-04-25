@@ -11,12 +11,14 @@ Write the code that will take a string and make this conversion given a number o
 string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
+O(n) Space & O(n) Time because string letters are only visited once, and stored only once in another array;
 */
 
 var convert = function(string, rows) {
   var len = string.length;
   var array = [];
   var result = '';
+  
   for (var j = 0; j < rows; j++) {
     array.push([]);
   }
