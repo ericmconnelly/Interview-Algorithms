@@ -1,5 +1,7 @@
 /* 
 Write a function to find the longest common prefix string amongst an array of strings.
+
+"Vertical matching (over characters)". Compare the characters between all strings from left to right. Stop whenever a mismatch is found.
 */
 
 var longestCommonPrefix = function(arr) {
@@ -17,7 +19,10 @@ var longestCommonPrefix = function(arr) {
    return arr[0];
 };
 
-//O(nk ^ 2) solutoin
+/*O(nk ^ 2) solution
+
+"Horizontal matching (over strings)". Pick up the first string and compare it with the rest. Return the minimum prefix found among all comparisons.
+*/
 
 var longest = function(arr) {
   if (!arr || arr.length === 0) {

@@ -2,8 +2,8 @@ var LinkedList = require('../LinkedList.js');
 // delete a node inthe middle of a single linked list, given only access to that node
 
 var deleteNthNode = function(list, n) {
-  if (n <= 0 || !node) {
-    return node;
+  if (n <= 0 || !list) {
+    return;
   }
 
   var node = list.head;
