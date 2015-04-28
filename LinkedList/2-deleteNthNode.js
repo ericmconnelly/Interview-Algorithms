@@ -42,4 +42,3 @@ console.log(list);
 
 // var list = { head: { value: 4, next: { value: 5, next: {value: 6, next: null} } },
 //   tail: { value: 6, next: null } };
-
