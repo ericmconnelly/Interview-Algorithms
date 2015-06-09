@@ -25,3 +25,4 @@ var lengthOfLongestSubstring = function(s) {
 console.log(lengthOfLongestSubstring('aa'));
 console.log(lengthOfLongestSubstring('dvdf'));
 //bug in code becuase if hash[s[i]] = 0 eg aab, the calculations are wrong becuase it will not go into the if statement
+

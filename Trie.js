@@ -88,13 +88,3 @@ Trie.prototype.sort = function(startNode) {
 
 module.exports = Trie;
 
-
-var trie = new Trie();
-trie.add('poop');
-trie.add('pool');
-trie.add('prototype');
-// console.log(trie.delete('poop'));
-console.log(trie.head);
-console.log(trie.hasWord('poop'))
-console.log(trie.hasWord('pool'))
-trie.sort(trie.head.p);

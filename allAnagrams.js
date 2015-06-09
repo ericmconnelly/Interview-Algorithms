@@ -15,4 +15,4 @@ var allAnagrams = function(string) {
   return Object.keys(unique);
 };
 
-console.log(allAnagrams('abca'));
+console.log(allAnagrams('abca'));`

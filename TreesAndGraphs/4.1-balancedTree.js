@@ -71,24 +71,24 @@ var getHeight = function(node, depth) {
 var isBalanced = function(node) {
   return getHeight(node, 0) !== -1;
 }
-// var maxDepth = function(root) {
-//   if (root = null) {
-//     return -1;
-//   }
-//   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
-// };
+var maxDepth = function(root) {
+  if (root = null) {
+    return -1;
+  }
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+};
 
-// var minDepth = function(root) {
-//   if (root === null) {
-//     return -1;
-//   }
+var minDepth = function(root) {
+  if (root === null) {
+    return -1;
+  }
 
-//   return 1 + Math.min(minDepth(root.left), minDepth(root.right));
-// };
+  return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+};
 
-// var isBalanced = function(root) {
-//   return (maxDepth(root) - minDepth(root) <= 1);
-// }
+var isBalanced = function(root) {
+  return (maxDepth(root) - minDepth(root) <= 1);
+}
 
 
 var tree = new BST();

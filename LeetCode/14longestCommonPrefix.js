@@ -40,3 +40,43 @@ var longest = function(arr) {
   }
   return pre;
 }
+
+var alt = function(strings) {
+  if (strings.length == 0) {
+        return "";   // Or maybe return null?
+    }
+    for (var prefixLen = 0; prefixLen < strings[0].length; prefixLen++) {
+        var c = strings[0].charAt(prefixLen);
+        for (var i = 1; i < strings.length; i++) {
+            if ( prefixLen >= strings[i].length ||
+                 strings[i].charAt(prefixLen) != c ) {
+                // Mismatch found
+                return strings[i].substring(0, prefixLen);
+            }
+        }
+    }
+    return strings[0];
+};
+
+var longest = function(strs) {
+  if(strs.length === 0) {
+    return '';
+  }
+  var prefix = strs[0];
+  console.log(prefix);
+  for(var i = 1; i < strs.length; i++){
+    for(var j = 0; j < prefix.length && j < strs[i].length; j++) {
+      if(prefix.charAt(j) !== strs[i].charAt(j)) {
+        break;
+      }
+    }
+    prefix = prefix.substring(0,j);
+    console.log(prefix)
+  }
+  return prefix;
+}
+
+
+var strings = ['foo', 'foog', 'food', 'asdf'];
+console.log(longest(strings))
+

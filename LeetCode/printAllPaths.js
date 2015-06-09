@@ -1,0 +1,1 @@
+var printPaths = functioN(node)

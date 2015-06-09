@@ -1,3 +1,7 @@
+
+// http://www.cs.usfca.edu/~galles/visualization/RecQueens.html
+// http://www.simplecode.in/famous-problems/n-queens-problem/#ffs-tabbed-33
+
 var Board = function(n) {
   this.board = [];
   for(var i = 0; i < n; i++) {
@@ -34,13 +38,6 @@ Board.prototype.isSafe = function(n, board, row, column) {
   }
   return true;
 };
-
-
-
-
-
-
-
 
 /*
 
